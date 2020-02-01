@@ -1,0 +1,53 @@
+html>
+<head>
+	<title> 
+		JavaScript  
+		| Change rectangle parametrs 
+	</title>
+</head>
+<body style="text-align:center;" id="body">
+	<h1 style="color:green;">   
+		Set rectangle parametrs 
+	</h1>
+	<p>Enter height value:</p>
+	<input type='text' id='id1' /> 
+	<p>Enter width value:</p>
+	<input type='text' id='id2' /> 
+	<form>
+		<p>Select color from the drop-down list:</p>
+		<select id="id3">
+			<option value="blue">blue</option>
+			<option value="red">red</option>
+			<option value="yellow">yellow</option>
+			<option value="orange">orange</option>
+		</select>
+	</form>
+	<br> 
+	<br> 
+	<button onclick="run_Script()"> 
+	click to set 
+	</button> 
+	<p id="SET_VALUES" style="color:green;  
+		font-size: 20px; 
+		font-weight: bold;"> 
+	</p>
+	<svg width="170" height="170">
+		<rect id="svgItem"  x="10" y="10" width="150" height="150" fill="green" />
+	</svg>
+	<script> 
+		var el_down = document.getElementById("SET_VALUES"); 
+		var inputH = document.getElementById("id1"); 
+		var inputW = document.getElementById("id2"); 
+		var inputF = document.getElementById("id3"); 
+		
+		function run_Script() { 
+		    el_down.innerHTML =  
+		           "height value = " + "'" + inputH.value + "'" +"	"+"width value = " + "'" + inputW.value + "'" +"	"+"fill value = " + "'" + inputF.value + "'";
+		
+		document.getElementById('svgItem').setAttribute("height", inputH.value+"px");
+		 document.getElementById('svgItem').setAttribute("width", inputW.value+"px");
+		 document.getElementById('svgItem').setAttribute("fill", inputF.value);			
+		} 
+	</script> 
+</body>
+</html>
